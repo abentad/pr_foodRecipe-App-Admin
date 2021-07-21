@@ -16,11 +16,11 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Aserar Admin', style: TextStyle(color: Colors.black, fontSize: 24.0, fontWeight: FontWeight.w600)),
-              SizedBox(height: size.height * 0.02),
+              SizedBox(height: size.height * 0.05),
               MaterialButton(
                 onPressed: () => Get.to(() => Add()),
                 color: Theme.of(context).primaryColor,
-                height: 40.0,
+                height: 50.0,
                 minWidth: double.infinity,
                 child: Text('Add Recipe', style: TextStyle(color: Colors.white, fontSize: 18.0)),
               ),

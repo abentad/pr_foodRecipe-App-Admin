@@ -41,11 +41,34 @@ class _AddState extends State<Add> {
                 _pageController.animateToPage(2, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
               },
             ),
-            Container(
-              color: Colors.deepPurple,
-            ),
+            buildAddStepsPage(size: size, postButtonPressed: () {}),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget buildAddStepsPage({required Size size, required Function() postButtonPressed}) {
+    return Container(
+      height: size.height * 0.95,
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
+        children: [
+          SizedBox(height: size.height * 0.04),
+          Text("Add Food info", style: TextStyle(fontSize: 18.0, color: Colors.grey)),
+          SizedBox(height: size.height * 0.04),
+          Spacer(),
+          //TODO: implement the add step page
+          SizedBox(height: size.height * 0.02),
+          MaterialButton(
+            onPressed: postButtonPressed,
+            color: Colors.purple,
+            height: 50.0,
+            minWidth: double.infinity,
+            child: Text('Post Recipe', style: TextStyle(color: Colors.white, fontSize: 18.0)),
+          ),
+          SizedBox(height: size.height * 0.02),
+        ],
       ),
     );
   }
@@ -174,6 +197,7 @@ class _AddState extends State<Add> {
               itemCount: int.parse(_ingredientAmountController.text),
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
+                //TODO: implement a way to get each ingredients textfield input
                 child: TextFormField(
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
